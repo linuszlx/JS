@@ -287,7 +287,7 @@ function notify() {
       const amount = disables ? disables.split(",").length : 0
       const disa = !notify || amount ? `【温馨提示】:  检测到${$nobyda.disable?`上次执行意外崩溃, `:``}已禁用${notify?`${amount}个`:`所有`}接口, 如需开启请前往BoxJs或查看脚本内第118行注释.\n` : ``
       $nobyda.notify("", "", Name + one + two + three + four + five + disa + notify, {
-        'media-url': $nobyda.headUrl || 'https://raw.githubusercontent.com/linuszlx/Quantumult-add/master/JS/JD-DailyBonus/jd.jpeg'
+        'media-url': $nobyda.headUrl || 'https://raw.githubusercontent.com/linuszlx/JS/main/JD/JD-DailyBonus/jd.jpeg'
       });
       $nobyda.headUrl = null;
       if ($nobyda.isJSBox) {
