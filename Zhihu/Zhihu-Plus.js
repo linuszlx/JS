@@ -29,7 +29,7 @@ let magicJS = MagicJS(scriptName, "INFO");
         response = removeRecommendAds();
         break;
       // 关注列表去广告
-      case /^https?:\/\/api\.zhihu\.com\/moments(\/|\?)?(recommend|action=|feed_type=)(?!\/people)/.test(magicJS.request.url):
+      case /^https?:\/\/api\.zhihu\.com\/moments_V2/.test(magicJS.request.url):
         response = removeMomentsAds();
         break;
       // 回答列表去广告与黑名单增强
