@@ -36,14 +36,6 @@ let magicJS = MagicJS(scriptName, "INFO");
       case /^https?:\/\/api\.zhihu\.com\/v4\/questions/.test(magicJS.request.url):
         response = removeQuestionsAds();
         break;
-      // 拦截官方账号推广消息
-      case magicJS.read("zhihu_settings_sys_msg") != false && /^https?:\/\/api\.zhihu\.com\/notifications\/v3\/timeline\/entry\/system_message/.test(magicJS.request.url):
-        response = removeSysMsgAds();
-        break;
-      // 屏蔽官方营销消息
-      case magicJS.read("zhihu_settings_sys_msg") != false && /^https?:\/\/api\.zhihu\.com\/notifications\/v3\/message/.test(magicJS.request.url):
-        response = removeMarketingMsg();
-        break;
       // 优化知乎软件配置
       case magicJS.read("zhihu_settings_app_conf") == true && /^https?:\/\/appcloud2\.zhihu\.com\/v\d+\/config/.test(magicJS.request.url):
         response = modifyAppConfig();
@@ -73,39 +65,6 @@ let magicJS = MagicJS(scriptName, "INFO");
   }
 })();
 
-/**
- * 屏蔽官方营销消息
- *
- * @param {*}
- * @return {*}
- */
-function removeMarketingMsg() {
-  let response = null;
-  try {
-    let obj = JSON.parse(magicJS.response.body);
-    let newItems = [];
-    for (let item of obj["data"]) {
-      if (item["detail_title"] === "官方帐号消息") {
-        let unread_count = item["unread_count"];
-        if (unread_count > 0) {
-          item["content"]["text"] = "未读消息" + unread_count + "条";
-        } else {
-          item["content"]["text"] = "全部消息已读";
-        }
-        item["is_read"] = true;
-        item["unread_count"] = 0;
-        newItems.push(item);
-      } else if (item["detail_title"] !== "知乎活动助手") {
-        newItems.push(item);
-      }
-    }
-    obj["data"] = newItems;
-    response = { body: JSON.stringify(obj) };
-  } catch (err) {
-    magicJS.logError(`知乎屏蔽官方营销消息出现异常：${err}`);
-  }
-  return response;
-}
 
 /**
  *  知乎屏蔽关键词解锁
@@ -282,28 +241,6 @@ function modifyAppConfig() {
     }
   } catch (err) {
     magicJS.logError(`优化知乎软件配置出现异常：${err}`);
-  }
-  return response;
-}
-
-/**
- * 拦截官方账号推广消息
- *
- * @param {*}
- * @return {*}
- */
-function removeSysMsgAds() {
-  let response = null;
-  try {
-    const sysmsg_blacklist = ["知乎小伙伴", "知乎视频", "知乎团队", "知乎礼券", "知乎读书会团队"];
-    let obj = JSON.parse(magicJS.response.body);
-    let data = obj["data"].filter((element) => {
-      return sysmsg_blacklist.indexOf(element["content"]["title"]) < 0;
-    });
-    obj["data"] = data;
-    response = { body: JSON.stringify(obj) };
-  } catch (err) {
-    magicJS.logError(`知乎拦截官方账号推广消息出现异常：${err}`);
   }
   return response;
 }
