@@ -3,7 +3,7 @@ var obj = JSON.parse(body);
 obj.data = [
   ];
 obj.paging = {
-    "is_end" : false,
+    "is_end" : true,
     "previous" : "",
     "totals" : 0,
     "next" : "https:\/\/api.zhihu.com\/zvideo-tabs\/tabs\/choice\/feeds\/follow",
