@@ -9,6 +9,7 @@ if (url.indexOf(path1) != -1) {
       return false;
     }
     return true;
-  });                                       
+  });
+  delet body['floors'][2]['data']['logisticsInfo'];
 }
 $done({body: JSON.stringify(body)});
