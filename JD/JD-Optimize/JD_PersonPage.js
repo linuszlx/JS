@@ -10,6 +10,6 @@ if (url.indexOf(path1) != -1) {
     }
     return true;
   });
-  delet body['floors'][2]['data']['logisticsInfo'];
-}
+};
+delet body['floors'][2]['data']['logisticsInfo'];
 $done({body: JSON.stringify(body)});
