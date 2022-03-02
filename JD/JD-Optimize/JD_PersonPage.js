@@ -6,7 +6,7 @@ let body = JSON.parse($response.body);
     if (item.mId == "commonBanner" || item.mId == "myownerfloor_wodezhuanshu" || item.mId == "recommendfloor"|| item.mId == "horizontalCard") {
       return false;
     }
-    return true;);
-};
+    return true;
+  });   
 delet body['floors'][2]['data']['logisticsInfo'];
 $done({body: JSON.stringify(body)});
