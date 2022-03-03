@@ -8,5 +8,5 @@ let body = JSON.parse($response.body);
     }
     return true;
   });
- delete body['floors'][i]['data']['logisticsInfo'];
+ delete body['floors'][2]['data']['logisticsInfo'];
 $done({body: JSON.stringify(body)});
