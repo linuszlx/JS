@@ -1,5 +1,3 @@
-const path1 = "personinfoBusiness";
-
 let body = JSON.parse($response.body);
 
   body.floors = body.floors.filter(function(item) {
