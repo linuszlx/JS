@@ -130,15 +130,19 @@ obj.data.sections_v2 = [
             "uri" : "bilibili:\/\/bilipay\/mine_wallet"
           },
           {
-            "id" : 544,
-            "title" : "创作中心",
-            "icon" : "http:\/\/i0.hdslb.com\/bfs\/archive\/a879489af0406067c39940316396ae63aeefe088.png",
-            "need_login" : 1,
-            "uri" : "bilibili:\/\/uper\/homevc",
+            "id" : 406,
+            "title" : "直播中心",
+            "icon" : "http:\/\/i0.hdslb.com\/bfs\/archive\/1db5791746a0112890b77a0236baf263d71ecb27.png",
             "common_op_item" : {
 
-            }
-          },
+            },
+            "uri" : "bilibili:\/\/user_center\/live_center"
+          }
+        ],
+        "style" : 1,
+        "button" : {
+
+        }
       },
       {
         "title" : "更多服务",
