@@ -47,104 +47,6 @@ obj.data.sections_v2 = [
         }
       },
       {
-        "button" : {
-          "icon" : "http:\/\/i0.hdslb.com\/bfs\/archive\/205f47675eaaca7912111e0e9b1ac94cb985901f.png",
-          "style" : 1,
-          "url" : "bilibili:\/\/uper\/user_center\/archive_selection",
-          "text" : "有奖发布"
-        },
-        "style" : 1,
-        "tip_icon" : "http:\/\/i0.hdslb.com\/bfs\/feed-admin\/8ea7064cfee183b523dc97971bdb86a0bd569aeb.png",
-        "title" : "创作中心",
-        "type" : 1,
-        "be_up_title" : "发布你的第一个视频",
-        "tip_title" : "领限定头像挂件，赢活动奖金",
-        "items" : [
-          {
-            "need_login" : 1,
-            "display" : 1,
-            "id" : 171,
-            "title" : "创作中心",
-            "global_red_dot" : 1,
-            "uri" : "bilibili:\/\/uper\/homevc",
-            "icon" : "http:\/\/i0.hdslb.com\/bfs\/archive\/d3aad2d07538d2d43805f1fa14a412d7a45cc861.png"
-          },
-          {
-            "need_login" : 1,
-            "display" : 1,
-            "id" : 570,
-            "title" : "UP主推荐",
-            "global_red_dot" : 1,
-            "uri" : "https:\/\/member.bilibili.com\/york\/up-invitation\/latest?navhide=1",
-            "icon" : "http:\/\/i0.hdslb.com\/bfs\/feed-admin\/621e25266b15b2bf311eeb4314e84310836bd4d6.png"
-          },
-          {
-            "need_login" : 1,
-            "display" : 1,
-            "id" : 542,
-            "title" : "投稿领奖励",
-            "global_red_dot" : 1,
-            "uri" : "https:\/\/member.bilibili.com\/studio\/bds\/redirect?target_source=mission_archive_2&channel=index",
-            "icon" : "http:\/\/i0.hdslb.com\/bfs\/archive\/ae18624fd2a7bdda6d95ca606d5e4cf2647bfa4d.png"
-          },
-          {
-            "need_login" : 1,
-            "display" : 1,
-            "id" : 174,
-            "title" : "有奖活动",
-            "red_dot" : 1,
-            "global_red_dot" : 1,
-            "uri" : "https:\/\/member.bilibili.com\/york\/hot-activity",
-            "icon" : "http:\/\/i0.hdslb.com\/bfs\/archive\/7f4fa86d99bf3814bf10f8ee5d6c8c9db6e931c8.png"
-          }
-        ]
-      },
-      {
-        "title" : "推荐服务",
-        "items" : [
-          {
-            "id" : 400,
-            "title" : "我的课程",
-            "icon" : "http:\/\/i0.hdslb.com\/bfs\/archive\/aa3a13c287e4d54a62b75917dd9970a3cde472e1.png",
-            "common_op_item" : {
-
-            },
-            "uri" : "https:\/\/m.bilibili.com\/cheese\/mine?navhide=1"
-          },
-          {
-            "id" : 402,
-            "title" : "个性装扮",
-            "icon" : "http:\/\/i0.hdslb.com\/bfs\/archive\/0bcad10661b50f583969b5a188c12e5f0731628c.png",
-            "common_op_item" : {
-
-            },
-            "uri" : "https:\/\/www.bilibili.com\/h5\/mall\/home?navhide=1&from=myservice"
-          },
-          {
-            "id" : 404,
-            "title" : "我的钱包",
-            "icon" : "http:\/\/i0.hdslb.com\/bfs\/archive\/f416634e361824e74a855332b6ff14e2e7c2e082.png",
-            "common_op_item" : {
-
-            },
-            "uri" : "bilibili:\/\/bilipay\/mine_wallet"
-          },
-          {
-            "id" : 406,
-            "title" : "直播中心",
-            "icon" : "http:\/\/i0.hdslb.com\/bfs\/archive\/1db5791746a0112890b77a0236baf263d71ecb27.png",
-            "common_op_item" : {
-
-            },
-            "uri" : "bilibili:\/\/user_center\/live_center"
-          }
-        ],
-        "style" : 1,
-        "button" : {
-
-        }
-      },
-      {
         "title" : "更多服务",
         "items" : [
           {
@@ -164,7 +66,27 @@ obj.data.sections_v2 = [
 
             },
             "uri" : "bilibili:\/\/user_center\/setting"
-          }
+          },
+          {
+            "id" : 741,
+            "title" : "我的钱包",
+            "icon" : "http:\/\/i0.hdslb.com\/bfs\/archive\/f416634e361824e74a855332b6ff14e2e7c2e082.png",
+            "need_login" : 1,
+            "uri" : "bilibili:\/\/bilipay\/mine_wallet",
+            "common_op_item" : {
+
+            }
+          },
+          {
+            "id" : 742,
+            "title" : "稿件管理",
+            "icon" : "http:\/\/i0.hdslb.com\/bfs\/archive\/97acb2d8dec09b296a38f7f7093d651947d13b91.png",
+            "need_login" : 1,
+            "uri" : "bilibili:\/\/uper\/\/user_center\/manuscript-list\/",
+            "common_op_item" : {
+
+            }
+          }       
         ],
         "style" : 2,
         "button" : {
