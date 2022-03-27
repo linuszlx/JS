@@ -74,34 +74,6 @@ if (magicJS.read(blackKey)) {
           magicJS.logError(`开屏广告处理出现异常：${err}`);
         }
         break;
-      // 标签页处理，如去除会员购等等
-      case /^https?:\/\/app\.bilibili\.com\/x\/resource\/show\/tab/.test(magicJS.request.url):
-        try{
-          const tabList = new Set(['直播', '推荐', '热门', '追番', '影视']);
-          const topList = new Set(['消息']);
-          const bottomList = new Set(['首页', '频道', '动态', '我的', '消息']);
-          let obj = JSON.parse(magicJS.response.body);
-          if (obj['data']['tab']){
-            let tab = obj['data']['tab'].filter((e) =>{return tabList.has(e.name);});
-            obj['data']['tab'] = tab;
-          }
-          if (obj['data']['top']){
-            let top = obj['data']['top'].filter((e) =>{return topList.has(e.name);});
-            obj['data']['top'] = top;
-          }
-          if (obj['data']['bottom']){
-            let bottom = obj['data']['bottom'].filter((e) =>{return bottomList.has(e.name);});
-            obj['data']['bottom'] = bottom;
-          }
-          body = JSON.stringify(obj);
-        }
-        catch (err){
-          magicJS.logError(`标签页处理出现异常：${err}`);
-        }
-        break;
-      default:
-        magicJS.logWarning('触发意外的请求处理，请确认脚本或复写配置正常。');
-        break;
     }
   }
   else{
