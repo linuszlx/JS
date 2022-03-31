@@ -1,6 +1,6 @@
 let body = JSON.parse($response.body);
   body.data = body.data.filter(function(item) {
-    if (item.target_type == "zvideo") {
+    if (item.type == "videos") {
       return false;
     }
     return true;
