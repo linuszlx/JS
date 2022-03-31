@@ -48,10 +48,7 @@ switch (true) {
             }
             for (let i = 0; i < obj['data'].length; i++) {
                 let element = targetIdFix(obj['data'][i]);
-                if (!element['ad'])         
-             // 屏蔽关注页的“最新视频”
-        else if (!element["type"] != "videos") 
-                {
+                if (!element['ad']){
                     data.push(element);
                 }
             }
