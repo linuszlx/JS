@@ -19,7 +19,6 @@ switch (true) {
             console.log(`知乎推荐列表去广告出现异常：${err}`);
         }
         break;
-
     // 关注列表去广告
     case /^https?:\/\/api\.zhihu\.com\/moments(\/|\?)?(recommend|action=|feed_type=)(?!\/people)/.test($request.url):
         try {
@@ -48,7 +47,9 @@ switch (true) {
             }
             for (let i = 0; i < obj['data'].length; i++) {
                 let element = targetIdFix(obj['data'][i]);
-                if (!element['ad']) {
+                if (!element['ad']) 
+				        // 屏蔽关注页的“最新视频”
+        else if (!element["type"] != "videos"){
                     data.push(element);
                 }
             }
