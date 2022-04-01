@@ -24,6 +24,13 @@ switch (true) {
     case /^https?:\/\/api\.zhihu\.com\/moments(\/|\?)?(recommend|action=|feed_type=)(?!\/people)/.test($request.url):
         try {
             let obj = JSON.parse($response.body);
+             obj.data = obj.data.filter(function(item) {
+          if (item.type == "videos") {
+                      return false;
+                               }
+                   return true;
+                              });                                       
+          response = { body: JSON.stringify(obj) };
             let data = [];
             // 修正由于JS number类型精度问题，导致JSON.parse精度丢失，引起想法不存在的问题
             const targetIdFix = (element) => {
