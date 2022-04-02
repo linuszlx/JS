@@ -6,7 +6,7 @@ let body = JSON.parse($response.body);
     return true;
   });
 response = { body: JSON.stringify(body) };
-           for(let i=0;i<obj['floors'].length;i++){
+           for(let i=0;i<body['floors'].length;i++){
         body['floors'][i]['data']['logisticsInfo'] = { };
           }
 $done({body: JSON.stringify(body)});
