@@ -5,5 +5,4 @@ let body = JSON.parse($response.body);
     }
     return true;
   });
-  body['floors']['2']['data']['logisticsInfo'] = { };
 $done({body: JSON.stringify(body)});
