@@ -1,8 +1,4 @@
-let body = JSON.parse($response.body);
-  body.dns = body.dns.filter(function(item) {
-    if (item.type == 1) {
-      return false;
-    }
-    return true;
-  });
-$done({body: JSON.stringify(body)});
+var body = $response.body;
+var obj = JSON.parse(body);
+obj['dns']['0']['ips'] = [ ];
+$done({body: JSON.stringify(obj)});
