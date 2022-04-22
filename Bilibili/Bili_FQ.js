@@ -220,16 +220,6 @@ obj.data = [
       "type" : 0,
       "tid" : 65550,
       "name" : "游戏赛事"
-    },
-    {
-      "logo" : "http:\/\/i0.hdslb.com\/bfs\/archive\/85d6dddbdc9746fed91c65c2c3eb3a0a453eadaf.png",
-      "reid" : 0,
-      "uri" : "bilibili:\/\/music\/home?from=category",
-      "goto" : "",
-      "param" : "",
-      "type" : 0,
-      "tid" : 65543,
-      "name" : "音频"
     }
   ];
 $done({body: JSON.stringify(obj)});
