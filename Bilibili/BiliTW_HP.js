@@ -23,13 +23,6 @@ obj.data = {
         "name" : "热门",
         "uri" : "bilibili:\/\/pegasus\/hottopic",
         "pos" : 3
-      },
-      {
-        "id" : 734,
-        "tab_id" : "bangumi",
-        "name" : "动画",
-        "uri" : "bilibili:\/\/following\/home_activity_tab\/6544",
-        "pos" : 4
       }
     ],
     "top" : [
