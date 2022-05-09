@@ -33,7 +33,7 @@ let magicJS = MagicJS(scriptName, "INFO");
         response = removeMomentsAds();
         break;
       // 回答列表去广告与黑名单增强
-      case /^https?:\/\/api\.zhihu\.com\/v4\/questions/.test(magicJS.request.url):
+      case /^https?:\/\/api\.zhihu\.com\/questions/.test(magicJS.request.url):
         response = removeQuestionsAds();
         break;
       // 优化知乎软件配置
