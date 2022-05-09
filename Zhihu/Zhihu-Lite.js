@@ -77,6 +77,18 @@ switch (true) {
             console.log(`知乎回答列表去广告出现异常：${err}`);
         }
         break;
+        
+    // 回答列表去广告
+    case /^https?:\/\/api\.zhihu\.com\/questions/.test($request.url):
+        try {
+            let obj = JSON.parse($response.body);
+            delete obj['ad_info'];
+            delete obj['roundtable_info'];
+            body = JSON.stringify(obj);
+        } catch (err) {
+            console.log(`知乎回答列表去广告出现异常：${err}`);
+        }
+        break;
 }
 
 if (body) {
