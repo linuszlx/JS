@@ -5,7 +5,5 @@ let body = JSON.parse($response.body);
     }
     return true;
   });
-if(body['floors'] !== '[
-
-  ]'){body['floors']['2']['data']['logisticsInfo'] = { }};
+if(body['floors'] !== null){body['floors']['2']['data']['logisticsInfo'] = { }};
 $done({body: JSON.stringify(body)});
