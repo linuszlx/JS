@@ -5,4 +5,5 @@ let body = JSON.parse($response.body);
     }
     return true;
   });
+if(body['floors']['2']['data'].hasOwnProperty("logisticsInfo")){body['floors']['2']['data']['logisticsInfo'] = { }};
 $done({body: JSON.stringify(body)});
