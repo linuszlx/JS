@@ -5,6 +5,6 @@ let body = JSON.parse($response.body);
     }
     return true;
   });
-if(body.floors.hasOwnProperty('1')){body['floors']['3']['data']['logisticsInfo'] = { }};
-if(body.floors.hasOwnProperty('1')){body['floors']['3']['data']['commentRemindInfo'] = { }};
+if(body.floors.hasOwnProperty('1')){body['floors']['4']['data']['logisticsInfo'] = { }};
+if(body.floors.hasOwnProperty('1')){body['floors']['4']['data']['commentRemindInfo'] = { }};
 $done({body: JSON.stringify(body)});
