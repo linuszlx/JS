@@ -1,7 +1,7 @@
 var body = $response.body;
 var obj = JSON.parse(body);
 obj.data = [
-    {
+ {
       "logo" : "http:\/\/i0.hdslb.com\/bfs\/archive\/6f629bd0dcd71d7b9911803f8e4f94fd0e5b4bfd.png",
       "reid" : 0,
       "uri" : "bilibili:\/\/pgc\/partition_page?page_name=bangumi-operation&title=%E7%95%AA%E5%89%A7&select_id=1",
@@ -60,6 +60,16 @@ obj.data = [
       "type" : 0,
       "tid" : 11,
       "name" : "电视剧"
+    },
+    {
+      "logo" : "http:\/\/i0.hdslb.com\/bfs\/archive\/7400e63e28ab9933a3fa8adb3bd63e3a20911641.png",
+      "reid" : 0,
+      "uri" : "https:\/\/m.bilibili.com\/cheese\/home?navhide=1&native.theme=1&night=0&spm_id_from=traffic.channel-square-category.0.0&csource=Channel_class",
+      "goto" : "",
+      "param" : "",
+      "type" : 0,
+      "tid" : 65560,
+      "name" : "课堂"
     },
     {
       "logo" : "http:\/\/i0.hdslb.com\/bfs\/archive\/9b3bb8cfc8d87809ffa409bc65def8d8c3eaf72b.png",
@@ -132,6 +142,16 @@ obj.data = [
       "name" : "汽车"
     },
     {
+      "logo" : "http:\/\/i0.hdslb.com\/bfs\/feed-admin\/56a67fa38d8d7378ab4154307d26cffce2d1ae3f.png",
+      "reid" : 0,
+      "uri" : "bilibili:\/\/region\/234",
+      "goto" : "",
+      "param" : "",
+      "type" : 0,
+      "tid" : 234,
+      "name" : "运动"
+    },
+    {
       "logo" : "http:\/\/i0.hdslb.com\/bfs\/archive\/50731fc4b9ec487ef2e3861a97e0eb4671b7bcef.png",
       "reid" : 0,
       "uri" : "bilibili:\/\/region\/160",
@@ -160,6 +180,16 @@ obj.data = [
       "type" : 0,
       "tid" : 217,
       "name" : "动物圈"
+    },
+    {
+      "logo" : "http:\/\/i0.hdslb.com\/bfs\/archive\/c794e8220a8cbe3d83b83e76e753c57df67b036a.png",
+      "reid" : 0,
+      "uri" : "https:\/\/www.bilibili.com\/h5\/vlog?from=2",
+      "goto" : "",
+      "param" : "",
+      "type" : 0,
+      "tid" : 65559,
+      "name" : "VLOG"
     },
     {
       "logo" : "http:\/\/i0.hdslb.com\/bfs\/archive\/de50290b11c65108eb70766fa887032b948d2e4b.png",
@@ -192,6 +222,16 @@ obj.data = [
       "name" : "娱乐"
     },
     {
+      "logo" : "http:\/\/i0.hdslb.com\/bfs\/archive\/518ba4a46b8ca94c0f29397e09acb345020fb867.png",
+      "reid" : 0,
+      "uri" : "https:\/\/www.bilibili.com\/h5\/musicplus?navhide=1",
+      "goto" : "",
+      "param" : "",
+      "type" : 0,
+      "tid" : 65563,
+      "name" : "新歌热榜"
+    },
+    {
       "logo" : "http:\/\/i0.hdslb.com\/bfs\/archive\/f90bb1ef59630ad9765486c6088a4944b96e88a3.png",
       "reid" : 0,
       "uri" : "bilibili:\/\/region\/181",
@@ -220,6 +260,26 @@ obj.data = [
       "type" : 0,
       "tid" : 65550,
       "name" : "游戏赛事"
+    },
+    {
+      "logo" : "http:\/\/i0.hdslb.com\/bfs\/archive\/a0c0e133644c47d6263cf24cf8364e2106c102c3.png",
+      "reid" : 0,
+      "uri" : "bilibili:\/\/article\/category\/",
+      "goto" : "",
+      "param" : "",
+      "type" : 0,
+      "tid" : 65541,
+      "name" : "专栏"
+    },
+    {
+      "logo" : "http:\/\/i0.hdslb.com\/bfs\/feed-admin\/99366a6ea47d7790f57699112bc1d0c6d5f0d302.png",
+      "reid" : 0,
+      "uri" : "https:\/\/www.bilibili.com\/h5\/mooc?navhide=1",
+      "goto" : "",
+      "param" : "",
+      "type" : 0,
+      "tid" : 65557,
+      "name" : "公开课"
     }
   ];
 $done({body: JSON.stringify(obj)});
