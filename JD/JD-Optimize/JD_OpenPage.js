@@ -7,7 +7,7 @@ if (url.indexOf(path1) != -1) {
   body.webViewFloorList = [];
   body.futureFloorList = []; 
   body.floorList = body.floorList.filter(function(item) {
-    if (item.floorId == 9924 || item.floorId == 9421 || item.floorId == 9831 || item.floorId == 8407){
+    if (item.floorId == 9924 || item.floorId == 9421 || item.floorId == 10284 || item.floorId == 8407){
       return true;
     }
     return false;
