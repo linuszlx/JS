@@ -132,26 +132,6 @@ obj.data = [
       "name" : "科技"
     },
     {
-      "logo" : "http:\/\/i0.hdslb.com\/bfs\/feed-admin\/1515d944550494abf81b552a84484dce80287242.png",
-      "reid" : 0,
-      "uri" : "bilibili:\/\/region\/223",
-      "goto" : "",
-      "param" : "",
-      "type" : 0,
-      "tid" : 223,
-      "name" : "汽车"
-    },
-    {
-      "logo" : "http:\/\/i0.hdslb.com\/bfs\/feed-admin\/56a67fa38d8d7378ab4154307d26cffce2d1ae3f.png",
-      "reid" : 0,
-      "uri" : "bilibili:\/\/region\/234",
-      "goto" : "",
-      "param" : "",
-      "type" : 0,
-      "tid" : 234,
-      "name" : "运动"
-    },
-    {
       "logo" : "http:\/\/i0.hdslb.com\/bfs\/archive\/50731fc4b9ec487ef2e3861a97e0eb4671b7bcef.png",
       "reid" : 0,
       "uri" : "bilibili:\/\/region\/160",
@@ -160,36 +140,6 @@ obj.data = [
       "type" : 0,
       "tid" : 160,
       "name" : "生活"
-    },
-    {
-      "logo" : "http:\/\/i0.hdslb.com\/bfs\/archive\/0f5e21f08616f9c02d706433ba1c00bd5b889c7b.png",
-      "reid" : 0,
-      "uri" : "bilibili:\/\/region\/211",
-      "goto" : "",
-      "param" : "",
-      "type" : 0,
-      "tid" : 211,
-      "name" : "美食"
-    },
-    {
-      "logo" : "http:\/\/i0.hdslb.com\/bfs\/archive\/9f3303b20e12ac874c379da09bca9ce4d0b2f88c.png",
-      "reid" : 0,
-      "uri" : "bilibili:\/\/region\/217",
-      "goto" : "",
-      "param" : "",
-      "type" : 0,
-      "tid" : 217,
-      "name" : "动物圈"
-    },
-    {
-      "logo" : "http:\/\/i0.hdslb.com\/bfs\/archive\/c794e8220a8cbe3d83b83e76e753c57df67b036a.png",
-      "reid" : 0,
-      "uri" : "https:\/\/www.bilibili.com\/h5\/vlog?from=2",
-      "goto" : "",
-      "param" : "",
-      "type" : 0,
-      "tid" : 65559,
-      "name" : "VLOG"
     },
     {
       "logo" : "http:\/\/i0.hdslb.com\/bfs\/archive\/de50290b11c65108eb70766fa887032b948d2e4b.png",
