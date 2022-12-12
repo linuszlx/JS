@@ -91,7 +91,7 @@ if (magicJS.read(blackKey)) {
                 }
                 break;
             // 标签页处理，如去除会员购等等
-            case /^https?:\/\/app\.bilibili\.com\/x\/resource\/show\/tab/.test(magicJS.request.url):
+            case /^https?:\/\/app\.(bilibili|biliapi)\.(com|net)\/x\/resource\/show\/tab/.test(magicJS.request.url):
                 try {
                     const tabList = new Set([39, 40, 41, 774, 857, 545, 151, 442, 99, 100, 101, 554, 556]);
                     const topList = new Set([176, 107]);
@@ -132,7 +132,7 @@ if (magicJS.read(blackKey)) {
                 }
                 break;
             // 我的页面处理，去除一些推广按钮
-            case /^https?:\/\/app\.bilibili\.com\/x\/v2\/account\/mine/.test(magicJS.request.url):
+            case /^https?:\/\/app\.(bilibili|biliapi)\.(com|net)\/x\/v2\/account\/mine/.test(magicJS.request.url):
                 try {
                     let obj = JSON.parse(magicJS.response.body);
                     const itemList = new Set([396, 397, 398, 399, 400, 402, 404, 406, 407, 410, 425, 426, 427, 428, 430, 432, 433, 434, 494, 495, 496, 497, 500, 501]);
@@ -189,7 +189,7 @@ if (magicJS.read(blackKey)) {
                 }
                 break;
             // 右上角活动
-            case /^https?:\/\/app\.bilibili\.com\/x\/resource\/top\/activity/.test(magicJS.request.url):
+            case /^https?:\/\/app\.(bilibili|biliapi)\.(com|net)\/x\/resource\/top\/activity/.test(magicJS.request.url):
                 try {
                     let obj = JSON.parse(magicJS.response.body);
                     if(obj.data){
@@ -215,22 +215,8 @@ if (magicJS.read(blackKey)) {
                     magicJS.logError(`热搜去广告出现异常：${err}`);
                 }
                 break;
-            //2022-03-05 add by ddgksf2013
-            case /https?:\/\/app\.bilibili\.com\/x\/v2\/account\/myinfo\?/.test(magicJS.request.url):
-                try {
-                    let obj = JSON.parse(magicJS.response.body);
-                    //magicJS.logInfo(`公众号墨鱼手记`);
-                    obj["data"]["vip"]["type"] = 2;
-                    obj["data"]["vip"]["status"] = 1;
-                    obj["data"]["vip"]["vip_pay_type"] = 1;
-                    obj["data"]["vip"]["due_date"] = 4669824160;
-                    body = JSON.stringify(obj);
-                } catch (err) {
-                    magicJS.logError(`1080P出现异常：${err}`);
-                }
-                break;
             // 追番去广告
-            case /pgc\/page\/bangumi/.test(magicJS.request.url):
+            case /^https?:\/\/api\.bilibili\.com\/pgc\/page\/bangumi/.test(magicJS.request.url):
                 try {
                     let obj = JSON.parse(magicJS.response.body);
                     obj.result.modules.forEach((module) => {
@@ -252,7 +238,7 @@ if (magicJS.read(blackKey)) {
                 }
                 break;
             // 观影页去广告
-            case /pgc\/page\/cinema\/tab\?/.test(magicJS.request.url):
+            case /^https?:\/\/api\.bilibili\.com\/pgc\/page\/cinema\/tab\?/.test(magicJS.request.url):
                 try {
                     let obj = JSON.parse(magicJS.response.body);
                     obj.result.modules.forEach((module) => {
@@ -294,7 +280,7 @@ if (magicJS.read(blackKey)) {
                 }
                 break;
             // 去除统一设置的皮肤
-            case /^https?:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\?/.test(magicJS.request.url):
+            case /^https?:\/\/app\.(bilibili|biliapi)\.(com|net)\/x\/resource\/show\/skin\?/.test(magicJS.request.url):
                 try {
                     let obj = JSON.parse(magicJS.response.body);
                     if (obj && obj.hasOwnProperty("data") && obj.data.hasOwnProperty("common_equip") && obj.data.common_equip.hasOwnProperty("package_url")) {
@@ -306,7 +292,7 @@ if (magicJS.read(blackKey)) {
                 }
                 break;
             // 开屏广告（预加载）如果粗暴地关掉，那么就使用预加载的数据，就会导致关不掉
-            case /^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/list/.test(magicJS.request.url):
+            case /^https:\/\/app\.(bilibili|biliapi)\.(com|net)\/x\/v2\/splash\/list/.test(magicJS.request.url):
                 try {
                     let obj = JSON.parse(magicJS.response.body);
                     if (obj.data&&obj.data.list) {
