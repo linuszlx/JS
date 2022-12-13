@@ -26,8 +26,8 @@ obj.data = {
       },
       {
         "id" : 101,
-        "tab_id" : "追番Tab",
-        "name" : "追番",
+        "tab_id" : "bangumi",
+        "name" : "动画",
         "uri" : "bilibili:\/\/pgc\/home",
         "pos" : 4
       },
