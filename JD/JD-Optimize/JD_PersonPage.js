@@ -1,6 +1,6 @@
 let body = JSON.parse($response.body);
   body.floors = body.floors.filter(function(item) {
-    if (item.mId == "commonBanner" || item.mId == "recommendfloor"|| item.mId == "horizontalCard" || item.mId == "buyOften" || item.mId == "platCard") {
+    if (item.mId == "commonBanner" || item.mId == "recommendfloor"|| item.mId == "horizontalCard" || item.mId == "buyOften" ) {
       return false;
     }
     return true;
