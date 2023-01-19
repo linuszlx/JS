@@ -2,7 +2,7 @@ var body = $response.body;
 var obj = JSON.parse(body);
 obj.Variables.extgroupidsdata = [
       {
-        "groupid" : "60",
+        "groupid" : "55",
         "groupicon" : null,
         "grouptitle" : "鉴赏家"
       },
