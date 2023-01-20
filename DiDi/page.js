@@ -1,6 +1,6 @@
 let body = JSON.parse($response.body);
   body.data.nav_list = body.data.nav_list.filter(function(item) {
-    if (item.link_title == "打车" || item.link_title == "代驾" || item.link_title == "滴滴青桔骑行" || item.link_title == "专车" || item.link_title == "更多"){
+    if (item.link_title == "打车" || item.link_title == "代驾" || item.link_title == "滴滴青桔骑行" || item.link_title == "专车" || item.link_title == "更多" || item.link_title == "顺风车" || item.link_title == "滴滴租车" || item.link_title == "特价拼车" || item.link_title == "公交地铁" || item.link_title == "远途拼车"){
       return true;
     }
     return false;
