@@ -1,4 +1,10 @@
 let body = JSON.parse($response.body);
+  body.data.nav_list = body.data.nav_list.filter(function(item) {
+    if (item.link_title == "打车" || item.link_title == "代驾" || item.link_title == "滴滴青桔骑行" || item.link_title == "顺风车" || item.link_title == "公交地铁" || item.link_title == "专车" || item.link_title == "更多"){
+      return true;
+    }
+    return false;
+  });
   body.bottom_nav_list = [
       {
         "icon_active" : "https:\/\/img-hxy021.didistatic.com\/static\/apollofile\/do1_r1NRbbajAxYAGmF8gdxD",
@@ -22,10 +28,5 @@ let body = JSON.parse($response.body);
         "icon" : "https:\/\/img-hxy021.didistatic.com\/static\/apollofile\/do1_nJzY3uniNt8xzmESKM9X"
       }
     ]; 
-  body.data.nav_list = body.data.nav_list.filter(function(item) {
-    if (item.link_title == "打车" || item.link_title == "代驾" || item.link_title == "滴滴青桔骑行" || item.link_title == "顺风车" || item.link_title == "公交地铁" || item.link_title == "专车" || item.link_title == "更多"){
-      return true;
-    }
-    return false;
-  };                                       
 $done({body: JSON.stringify(body)});
+
