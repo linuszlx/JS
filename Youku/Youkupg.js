@@ -1,6 +1,20 @@
 var body = $response.body;
 var obj = JSON.parse(body);
-obj.data.model.configInfo.bottomNavigate.data.bottomTabList = [
+obj.data = {
+    "model" : {
+      "configInfo" : {
+        "bottomNavigate" : {
+          "data" : {
+            "token" : "ykn_elevatedPrimaryBackground",
+            "id" : 31,
+            "pendantCeiling" : {
+              "digit" : 2,
+              "redPoint" : 1,
+              "marketPoint" : 1
+            },
+            "bgColor" : "#ffffffff",
+            "bgPic" : "",
+            "bottomTabList" : [
               {
                 "androidClickRouteFullClassName" : "com.youku.v2.HomePageEntry",
                 "arg1" : "home_new_1",
@@ -120,5 +134,11 @@ obj.data.model.configInfo.bottomNavigate.data.bottomTabList = [
                 "unClickToken" : "ykn_secondaryInfo",
                 "unClickIconDark" : "http://liangcang-material.alicdn.com/prod/upload/3f1e8173ccca493db46d5a34a22c4cc5.webp.png"
               }
-            ];
+            ],
+            "bgPicHigh" : ""
+          }
+        }
+      }
+    }
+  };
 $done({body: JSON.stringify(obj)});
