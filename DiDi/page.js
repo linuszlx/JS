@@ -1,11 +1,11 @@
 let body = JSON.parse($response.body);
-  body.data.nav_list = body.data.nav_list.filter(function(item) {
+  body.data.order_cards.nav_list_card.data = body.data.order_cards.nav_list_card.data.filter(function(item) {
     if (item.link_title == "打车" || item.link_title == "代驾" || item.link_title == "滴滴青桔骑行" || item.link_title == "专车" || item.link_title == "更多" || item.link_title == "顺风车" || item.link_title == "滴滴租车" || item.link_title == "特价拼车" || item.link_title == "公交地铁" || item.link_title == "远途拼车"){
       return true;
     }
     return false;
   });
-  body.data.bottom_nav_list = [
+  body.data.disorder_cards.bottom_nav_list = [
       {
         "icon_active" : "https:\/\/img-hxy021.didistatic.com\/static\/apollofile\/do1_r1NRbbajAxYAGmF8gdxD",
         "id" : "v6x_home",
