@@ -1,6 +1,6 @@
 var body = $response.body;
 var obj = JSON.parse(body);
-if(body.data.hasOwnProperty('11'))
+if(body.hasOwnProperty('data'))
 {body['data']['friendChannel']= { };
  body['data']['searchBeginScene']= { };
  body['data']['hongbaoconfig_3642']= { };
