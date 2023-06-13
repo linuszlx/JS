@@ -1,10 +1,10 @@
 var body = $response.body;
 var obj = JSON.parse(body);
 if (obj.hasOwnProperty("data") == true){
- body['data']['friendChannel']= { };
- body['data']['searchBeginScene']= { };
- body['data']['hongbaoconfig_3642']= { };
- body['data']['commonChannel']= { };
- body['data']['bcjChannel']= { };
+ obj['data']['friendChannel']= { };
+ obj['data']['searchBeginScene']= { };
+ obj['data']['hongbaoconfig_3642']= { };
+ obj['data']['commonChannel']= { };
+ obj['data']['bcjChannel']= { };
 };
 $done({body: JSON.stringify(obj)});
