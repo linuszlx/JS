@@ -139,12 +139,12 @@ let magicJS = MagicJS(scriptName, "INFO");
         try {
           let obj = JSON.parse(magicJS.response.body);
           delete obj.data.big_banner;
-          obj.data.rows = obj.data.rows.filter(function(item) {
+          if(obj.data.hasOwnProperty("rows")){obj.data.rows = obj.data.rows.filter(function(item) {
     if (item.title == "值友福利" || item.title == "我的补贴购") {
       return false;
     }
     return true;
-  });
+  })};
    response = { body: JSON.stringify(obj) };
         } catch (err) {
           magicJS.logError(`值会员权益中心banner去广告出现异常：${err}`);
