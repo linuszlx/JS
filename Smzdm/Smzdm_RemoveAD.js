@@ -47,7 +47,7 @@ let magicJS = MagicJS(scriptName, "INFO");
               element.zz_content.circular_banner_option.img = "";
             }
             // 最顶部的banner和红包不显示
-            if (element.zz_type !== "yixing_banner" && element.zz_type !== "hongbao") {
+            if (element.zz_type !== "yixing_banner" && element.zz_type !== "hongbao" && element.zz_type !== "top_banner") {
               component.push(element);
             }
           });
