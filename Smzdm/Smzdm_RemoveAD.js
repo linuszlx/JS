@@ -139,7 +139,7 @@ let magicJS = MagicJS(scriptName, "INFO");
         try {
           let obj = JSON.parse(magicJS.response.body);
           delete obj.data.big_banner;
-          obj.data.rows = body.data.rows.filter(function(item) {
+          obj.data.rows = obj.data.rows.filter(function(item) {
     if (item.title == "值友福利" || item.title == "我的补贴购") {
       return false;
     }
