@@ -145,7 +145,7 @@ let magicJS = MagicJS(scriptName, "INFO");
     }
     return true;
   });
-          response = { body: JSON.stringify(obj) };
+   response = { body: JSON.stringify(obj) };
         } catch (err) {
           magicJS.logError(`值会员权益中心banner去广告出现异常：${err}`);
         }
