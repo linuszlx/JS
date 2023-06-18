@@ -142,9 +142,9 @@ let magicJS = MagicJS(scriptName, "INFO");
           if (obj.data.hasOwnProperty("rows") == true) {
             obj.data.rows = obj.data.rows.filter(function(item) {
     if (item.title == "值友福利" || item.title == "我的补贴购") {
-      return false;
+      return true;
     }
-    return true;
+    return false;
   })};
    response = { body: JSON.stringify(obj) };
         } catch (err) {
