@@ -7,7 +7,7 @@ if (url.indexOf(path1) != -1) {
   body.webViewFloorList = [];
   body.futureFloorList = []; 
   body.floorList = body.floorList.filter(function(item) {
-    if (item.floorOrder == -2 || item.floorOrder == 8 ||  item.floorOrder == 11 || item.floorOrder == 23 || item.floorOrder == 113 || item.floorId == 470 || item.floorId == 472  || item.floorId == 474 || item.floorId == 482 || item.floorId == 484 || item.floorId == 488 || item.floorId == 8407){
+    if (item.floorOrder == -2 || item.floorOrder == 8 ||  item.floorOrder == 11 || item.floorOrder == 23 || item.floorOrder == 113 || item.floorId == 470 || item.floorId == 472 || item.floorId == 474 || item.floorId == 482 || item.floorId == 484 || item.floorId == 488 || item.floorId == 8407){
       return true;
     }
     return false;
