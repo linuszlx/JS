@@ -1,0 +1,123 @@
+{
+  "createBy" : null,
+  "reviewStatus" : 4,
+  "id" : 555,
+  "detail" : [
+    {
+      "alias" : "底tab1692345236687",
+      "className" : "TabZJ",
+      "code" : "tab",
+      "na" : {
+        "id" : 11,
+        "items" : [
+          {
+            "className" : "TabItemZJ",
+            "na" : {
+              "name" : "智家",
+              "badge" : {
+                "className" : "BadgeZJ",
+                "na" : {
+                  "logic" : 1,
+                  "source" : "售后评价",
+                  "type" : null,
+                  "interface" : "云端接口"
+                }
+              },
+              "trackCode" : "HDIY10914",
+              "id" : 1,
+              "link" : "智家",
+              "interactive" : null,
+              "iconBackground" : {
+                "className" : "IconBackgroundZJ",
+                "na" : {
+                  "backTopPic" : "",
+                  "selectPic" : "https:\/\/oss-zjrs.haier.net\/content\/img\/2023081816054651363830.png",
+                  "defaultPic" : ""
+                }
+              },
+              "icon" : {
+                "className" : "IconZJ",
+                "na" : {
+                  "backTopPic" : "",
+                  "selectPic" : "https:\/\/oss-zjrs.haier.net\/content\/img\/2023081816052967557815.png",
+                  "defaultPic" : "https:\/\/oss-zjrs.haier.net\/content\/img\/2023081816052085792101.png"
+                }
+              },
+              "textColor" : {
+                "className" : "TextColorZJ",
+                "na" : {
+                  "backTopPic" : "#000000",
+                  "selectPic" : "#2283E2E6",
+                  "defaultPic" : "#636A74FF"
+                }
+              }
+            }
+          },
+          {
+            "className" : "TabItemZJ",
+            "na" : {
+              "name" : "我的",
+              "badge" : {
+                "className" : "BadgeZJ",
+                "na" : {
+                  "logic" : 2,
+                  "source" : "个人中心",
+                  "type" : "dot",
+                  "interface" : "云端接口"
+                }
+              },
+              "trackCode" : "HDIY10918",
+              "id" : 1692345420134,
+              "link" : "我的",
+              "interactive" : null,
+              "iconBackground" : {
+                "className" : "IconBackgroundZJ",
+                "na" : {
+                  "backTopPic" : "",
+                  "selectPic" : "https:\/\/oss-zjrs.haier.net\/content\/img\/2023081816165807043116.png",
+                  "defaultPic" : ""
+                }
+              },
+              "icon" : {
+                "className" : "IconZJ",
+                "na" : {
+                  "backTopPic" : "",
+                  "selectPic" : "https:\/\/oss-zjrs.haier.net\/content\/img\/2023081816165291390478.png",
+                  "defaultPic" : "https:\/\/oss-zjrs.haier.net\/content\/img\/2023081816164882528635.png"
+                }
+              },
+              "textColor" : {
+                "className" : "TextColorZJ",
+                "na" : {
+                  "backTopPic" : "#000000",
+                  "selectPic" : "#2283E2E6",
+                  "defaultPic" : "#636A74FF"
+                }
+              }
+            }
+          }
+        ],
+        "background" : {
+          "className" : "BackgroundZJ",
+          "na" : {
+            "color" : "",
+            "type" : "url",
+            "url" : "https:\/\/zjrs.haier.net\/zjm\/bm\/APPPageManage\/assets\/image\/default6.jpg"
+          }
+        }
+      },
+      "flag" : 1692345278111,
+      "type" : 11,
+      "name" : "底tab"
+    }
+  ],
+  "updateBy" : null,
+  "mouldName" : "8.0.0",
+  "thumbnailUrl" : "https:\/\/oss-zjrs.haier.net\/content\/img\/2023092214402765550011.jpeg",
+  "mouldStatus" : 1,
+  "createTime" : null,
+  "versionId" : 116,
+  "detailUrl" : "https:\/\/oss-zjrs.haier.net\/resource\/confFile\/2023092214402800037445.json",
+  "status" : null,
+  "updateTime" : null
+}
