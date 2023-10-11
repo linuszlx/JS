@@ -24,7 +24,7 @@ let magicJS = MagicJS(scriptName, "INFO");
       // 去除首页广告
       case /^https?:\/\/homepage-api\.smzdm\.com\/v3\/home/.test(magicJS.request.url):
         try {
-          let obj = JSON.parse(magicJS.response.body);       
+          let obj = JSON.parse(magicJS.response.body);
           let component = [];
           obj.data.component.forEach((element) => {
             if (element.zz_type === "banner") {
@@ -47,12 +47,12 @@ let magicJS = MagicJS(scriptName, "INFO");
               element.zz_content.circular_banner_option.img = "";
             }
             // 最顶部的banner和红包不显示
-            if (element.zz_type !== "yixing_banner" && element.zz_type !== "hongbao" && element.zz_type !== "top_banner") {
+            if (element.zz_type !== "top_banner" && element.zz_type !== "hongbao") {
               component.push(element);
             }
           });
+
           obj.data.component = component;
-          obj.data.theme = [];
           response = { body: JSON.stringify(obj) };
         } catch (err) {
           magicJS.logError(`首页去广告出现异常：${err}`);
@@ -85,16 +85,6 @@ let magicJS = MagicJS(scriptName, "INFO");
         try {
           let obj = JSON.parse(magicJS.response.body);
           obj.data.lanmu_qikan = {};
-          response = { body: JSON.stringify(obj) };
-        } catch (err) {
-          magicJS.logError(`好价详情页去广告出现异常：${err}`);
-        }
-        break;
-      // 去除文章详情页广告
-      case /^https?:\/\/post\.m\.smzdm\.com\/ajax_app\/ajax_get_footer_list/.test(magicJS.request.url):
-        try {
-          let obj = JSON.parse(magicJS.response.body);
-          obj.data.tuiguang_ad = [];
           response = { body: JSON.stringify(obj) };
         } catch (err) {
           magicJS.logError(`好价详情页去广告出现异常：${err}`);
@@ -135,18 +125,13 @@ let magicJS = MagicJS(scriptName, "INFO");
         }
         break;
       // 去除值会员权益中心banner广告
-      case /^https?:\/\/user-api\.smzdm\.com\/vip/.test(magicJS.request.url):
+      case /^https?:\/\/zhiyou\.m\.smzdm\.com\/user\/vip\/ajax_get_banner/.test(magicJS.request.url):
         try {
           let obj = JSON.parse(magicJS.response.body);
-          delete obj.data.big_banner;
-          if (obj.data.hasOwnProperty("rows") == true) {
-            obj.data.rows = obj.data.rows.filter(function(item) {
-    if (item.title == "值友福利" || item.title == "我的补贴购") {
-      return true;
-    }
-    return false;
-  })};
-   response = { body: JSON.stringify(obj) };
+          obj.data.big_banner = obj.data.big_banner.filter((element) => {
+            return element.logo_title !== "广告";
+          });
+          response = { body: JSON.stringify(obj) };
         } catch (err) {
           magicJS.logError(`值会员权益中心banner去广告出现异常：${err}`);
         }
