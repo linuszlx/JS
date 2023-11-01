@@ -1,8 +1,8 @@
 let body = JSON.parse($response.body);
-  body.result.modules = body.result.modules.filter(function(item) {
+  if(body.result.modules.hasOwnProperty('3')){body.result.modules = body.result.modules.filter(function(item) {
     if (item.module_id == 1058) {
       return false;
     }
     return true;
-  });
+  })};
 $done({body: JSON.stringify(body)});
