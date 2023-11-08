@@ -1,5 +1,5 @@
 let body = JSON.parse($response.body);
-body.normal.navigationAll = [
+body.result.modeMap.normal.navigationAll = [
           {
             "lableName" : "首页",
             "functionId" : "index",
@@ -139,7 +139,7 @@ body.normal.navigationAll = [
             "modelAndroid" : ""
           }
         ];
-body.normal.head = [
+body.result.modeMap.normal.head = [
           {
             "isEffected" : true,
             "imageUrl" : "https:\/\/storage.360buyimg.com\/mobileskin\/ng71698134236517.png",
