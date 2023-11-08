@@ -1,8 +1,4 @@
-const path1 = "welcomeHome";
-
-let url = $request.url;
 let body = JSON.parse($response.body);
-if (url.indexOf(path1) != -1) {
   body.topBgImgBig = "https:\/\/m15.360buyimg.com\/mobilecms\/s1125x939_jfs\/t1\/191738\/33\/41631\/23777\/654490b5Fe94ac65f\/47b3af68b5133e9e.jpg!q70.jpg.dpg.webp";
   body.webViewFloorList = [];
   body.futureFloorList = []; 
@@ -11,6 +7,7 @@ if (url.indexOf(path1) != -1) {
       return true;
     }
     return false;
-  });                                       
-}
+  });
+body['floorList']['1']['content']['compressBgPic'] = "https:\/\/m15.360buyimg.com\/mobilecms\/s1125x435_jfs\/t1\/180201\/1\/37914\/3247\/6544911aF1fae07a0\/7f52f917cc0fa9d4.png";
+body['floorList']['1']['content']['bgPic'] = "https:\/\/m15.360buyimg.com\/mobilecms\/s1125x435_jfs\/t1\/180201\/1\/37914\/3247\/6544911aF1fae07a0\/7f52f917cc0fa9d4.png";
 $done({body: JSON.stringify(body)});
