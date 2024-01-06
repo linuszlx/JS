@@ -1,5 +1,5 @@
 let body = JSON.parse($response.body);
-  body.topBgImgBig = "https:\/\/m15.360buyimg.com\/mobilecms\/s1125x939_jfs\/t1\/191738\/33\/41631\/23777\/654490b5Fe94ac65f\/47b3af68b5133e9e.jpg!q70.jpg.dpg.webp";
+  body.topBgImgBig = "";
   body.webViewFloorList = [];
   body.futureFloorList = []; 
   body.floorList = body.floorList.filter(function(item) {
@@ -8,4 +8,6 @@ let body = JSON.parse($response.body);
     }
     return false;
   });
+body['floorList']['1']['content']['compressBgPic'] = "";
+body['floorList']['1']['content']['bgPic'] = "";
 $done({body: JSON.stringify(body)});
