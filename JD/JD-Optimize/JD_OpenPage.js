@@ -8,7 +8,4 @@ let body = JSON.parse($response.body);
     }
     return false;
   });
-body['floorList']['1']['content']['compressBgPic'] = "";
-body['floorList']['1']['content']['bgPic'] = "";
-
 $done({body: JSON.stringify(body)});
