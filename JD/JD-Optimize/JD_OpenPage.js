@@ -8,6 +8,7 @@ let body = JSON.parse($response.body);
     }
     return false;
   });
-body['floorList']['1']['content']['compressBgPic'] = "https:\/\/m15.360buyimg.com\/mobilecms\/s1125x435_jfs\/t1\/180201\/1\/37914\/3247\/6544911aF1fae07a0\/7f52f917cc0fa9d4.png";
-body['floorList']['1']['content']['bgPic'] = "https:\/\/m15.360buyimg.com\/mobilecms\/s1125x435_jfs\/t1\/180201\/1\/37914\/3247\/6544911aF1fae07a0\/7f52f917cc0fa9d4.png";
+body['floorList']['1']['content']['compressBgPic'] = "";
+body['floorList']['1']['content']['bgPic'] = "";
+
 $done({body: JSON.stringify(body)});
