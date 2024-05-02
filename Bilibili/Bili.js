@@ -26,6 +26,9 @@ if  (url.includes("/x/resource/show/tab/v2")) {
       obj.data.top[0].pos = 1;
     }
   }
+} else if (url.includes("/x/resource/top/activity")) {
+  // 首页右上角活动
+  obj = { code: -404, message: "啥都木有", ttl: 1, data: null };
 } else if (url.includes("/x/v2/account/mine?")) {
   // 我的页面
   const del = ["rework_v1", "vip_section", "vip_section_v2"];
