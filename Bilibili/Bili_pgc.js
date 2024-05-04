@@ -5,4 +5,10 @@ let body = JSON.parse($response.body);
     }
     return true;
   })};
+  if(body.result.modules.hasOwnProperty('3')){body['result']['modules']['1']['items']= body.['result']['modules']['1']['items'].filter(function(item) {
+    if (item.title == "纪录片" ||  item.title == "电影"||  item.title == "电视剧"||  item.title == "综艺") {
+      return false;
+    }
+    return true;
+  })};
 $done({body: JSON.stringify(body)});
