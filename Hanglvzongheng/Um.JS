@@ -1,20 +1,2 @@
-/********************************
-Umetrip Remove Ads - Version 1.0
-Please note that you may need to reinstall app for script to work.
-
-QuantumultX rewrite link:
-
-********************************/
-
-const url = $request.url;
-const header = $request.headers;
-const ua = $request.headers.rpid||$request.headers.Rpid;
-const blockIds = [
-	"1000029",
-	"1000026"
-];
-
-if(blockIds.includes(ua)){
-	$done({status:"HTTP/1.1 404 Not Found"});
-}else{
-	$done();
+const version = 'V1.0.1';
+var ua=$request.headers.rpid||$request.headers.Rpid;ua.includes("1000029")||ua.includes("1000026")?$done({status:"HTTP/1.1 404 Not Found"}):$done({});
