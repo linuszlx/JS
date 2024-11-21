@@ -1,5 +1,4 @@
-// 脚本引用 https://raw.githubusercontent.com/RuCu6/Loon/main/Scripts/bilibili/json.js
-// 2024-10-15 11:00
+// 2024-10-19 12:35
 
 const url = $request.url;
 if (!$response.body) $done({});
@@ -15,7 +14,7 @@ if (url.includes("/x/resource/show/tab/v2")) {
   }
   // 首页导航栏
   if (obj?.data?.tab?.length > 0) {
-    const sortLists = ["直播", "推荐", "热门", "动画", "影视"];
+    const sortLists = ["直播", "推荐", "热门", "影视", "动画"];
     obj.data.tab = obj.data.tab
       .filter((i) => sortLists?.includes(i?.name))
       .sort((a, b) => sortLists.indexOf(a?.name) - sortLists.indexOf(b?.name));
@@ -121,6 +120,9 @@ if (url.includes("/x/resource/show/tab/v2")) {
   if (obj?.data?.items?.length > 0) {
     // 白名单
     obj.data.items = obj.data.items.filter((i) => i?.card_goto === "av");
+  }
+  if (obj?.data?.config?.toast?.has_toast) {
+    obj.data.config.toast.has_toast = false;
   }
 } else if (url.includes("/x/v2/feed/index/story")) {
   // 竖屏模式信息流
