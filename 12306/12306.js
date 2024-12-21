@@ -5,8 +5,6 @@
 
 let body = "";
 let obj = JSON.parse($request.body);
-const isQuanX = typeof $task !== "undefined";
-
 if (obj.placementNo === "0007") {
   body =
     '{"code":"00","materialsList":[{"billMaterialsId":"255","filePath":"h","creativeType":1}],"advertParam":{"skipTime":1}}';
@@ -15,9 +13,4 @@ if (obj.placementNo === "0007") {
 } else {
   body = '{"code":"00","message":"无广告返回"}';
 }
-
-if (isQuanX) {
-  $done({ body });
-} else {
   $done({ response: { body } });
-}
