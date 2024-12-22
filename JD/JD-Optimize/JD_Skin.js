@@ -1,4 +1,3 @@
-if (!$response.body) $done({});
 let body = JSON.parse($response.body);
 body.result.modeMap.normal.navigationAll = [
           {
