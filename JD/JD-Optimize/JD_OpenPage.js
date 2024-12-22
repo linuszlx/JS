@@ -1,5 +1,6 @@
 let body = JSON.parse($response.body);
-  body.topBgImgBig = "";
+if (body?.floors?.length > 0) { 
+body.topBgImgBig = "";
   body.webViewFloorList = [];
   body.futureFloorList = []; 
   body.floorList = body.floorList.filter(function(item) {
@@ -10,5 +11,5 @@ let body = JSON.parse($response.body);
   });
 body['floorList']['1']['content']['compressBgPic'] = "";
 body['floorList']['1']['content']['bgPic'] = "";
-body['floorList']['1']['textColor'] = "";
+body['floorList']['1']['textColor'] = ""}
 $done({body: JSON.stringify(body)});
