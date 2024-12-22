@@ -1,9 +1,12 @@
 const url = $request.url;
-const header = $request.headers;
-const resp = {};
-const headopt = header["M-SHARK-TRACEID"] || header["m-shark-traceid"];
+const headers = $request.headers;
+const headopt = headers["M-SHARK-TRACEID"] || headers["m-shark-traceid"];
+let body = ""; // 根据你的需求填充 `body` 内容
 
 if (headopt != null) {
-  $done({ body:"", headers:"", status: "HTTP/1.1 204 No Content" });
-} else{
-  $done({response: { body }});
+  // 如果有指定的 header，返回 204 No Content 响应
+  $done({ status: "HTTP/1.1 204 No Content", body: "", headers: {} });
+} else {
+  // 如果没有指定的 header，返回自定义的响应 body
+  $done({ response: { body } });
+}
