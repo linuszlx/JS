@@ -1,7 +1,3 @@
-Please note that you may need to reinstall app for script to work.
-QuantumultX rewrite link:
-********************************/
-
 const url = $request.url;
 const header = $request.headers;
 const resp = {};
