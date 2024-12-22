@@ -6,4 +6,4 @@ const headopt = header["M-SHARK-TRACEID"] || header["m-shark-traceid"];
 if (headopt != null) {
   $done({ body:"", headers:"", status: "HTTP/1.1 204 No Content" });
 } else{
-  $done({});
+  $done({response: { body }});
