@@ -1,3 +1,4 @@
+if (!$response.body) $done({});
 let body = JSON.parse($response.body);
 if (body?.floors?.length > 0) { 
 body.topBgImgBig = "";
