@@ -2,7 +2,7 @@
 if (!$response.body) {
   // 如果响应体为空，直接结束并返回空的响应体
   $done({});
-}
+};
 
 var body = $response.body;  // 获取响应体
 
@@ -13,14 +13,14 @@ try {
 } catch (e) {
   // 如果 JSON 解析失败，返回空响应体
   $done({});
-}
+};
 
 // 检查 obj.data 是否存在，并且包含需要清空的字段
 if (obj.data) {
   obj.data.app6_bootStrapAd = {};  // 清空 app6_bootStrapAd 字段
   obj.data.app6_secondFloor = {};  // 清空 app6_secondFloor 字段
   obj.data.app6_atmosphere = {};   // 清空 app6_atmosphere 字段
-}
+};
 
 // 返回修改后的响应体
 $done({body: JSON.stringify(obj)});
