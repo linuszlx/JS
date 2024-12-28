@@ -1,3 +1,4 @@
+if (!$response.body) $done({})
 var body = $response.body;  // 获取响应体
 var obj = JSON.parse(body);  // 将响应体转换为 JSON 对象
 
