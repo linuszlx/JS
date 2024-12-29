@@ -1,5 +1,5 @@
-var body = $response.body;
-var obj = JSON.parse(body);
+if (!$response.body) $done({});
+let obj = JSON.parse($response.body);
 obj.data.list = [
 
   ];
