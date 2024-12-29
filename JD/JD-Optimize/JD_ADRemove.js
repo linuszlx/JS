@@ -1,6 +1,9 @@
 if (!$response.body) $done({});
+const path1 = "start";
+const path2 = "myOrderInfo";
+const path3 = "orderTrackBusiness";
+let url = $request.url;
 let body = JSON.parse($response.body);
-
 if (url.indexOf(path1) != -1) {
   body.images = [];
   body.showTimesDaily = 0;
