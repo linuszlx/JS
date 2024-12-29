@@ -1,8 +1,4 @@
-const path1 = "start";
-const path2 = "myOrderInfo";
-const path3 = "orderTrackBusiness";
-
-let url = $request.url;
+if (!$response.body) $done({});
 let body = JSON.parse($response.body);
 
 if (url.indexOf(path1) != -1) {
