@@ -114,9 +114,9 @@ if (url.includes("/answers/v2/") || url.includes("/articles/v2/")) {
   }
 } else if (url.includes("/questions/")) {
   // 问题回答列表
-  delete obj.ad_info;
-  delete obj.data.ad_info;
-  delete obj.query_info;
+  if (obj.ad_info) delete obj.ad_info;
+  if (obj.data?.ad_info) delete obj.data.ad_info;
+  if (obj.query_info) delete obj.query_info;
   if (obj?.data?.length > 0) {
     obj.data = obj.data.filter((i) => !i?.target?.answer_type?.includes("paid"));
   }
