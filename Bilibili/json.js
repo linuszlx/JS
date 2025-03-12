@@ -27,6 +27,11 @@ if (url.includes("/x/resource/show/tab/v2")) {
       obj.data.top[0].pos = 1;
     }
   }
+} else if (url.includes("/x/v2/search/square")) {
+  // 搜索框
+  if (obj?.data) {
+    obj.data = { type: "history", title: "搜索历史", search_hotword_revision: 2 };
+  }
 } else if (url.includes("/x/v2/account/mine")) {
   // 我的页面
   const del = ["ipad_upper_sections", "rework_v1", "vip_section", "vip_section_v2"];
