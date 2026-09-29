@@ -1,6 +1,6 @@
 /*
  * Bilibili 国际版 Live Feed 增强脚本
- * 注入国内版 banner_v2 与 area_entrance_v3
+ * 功能：彻底移除大 Banner，升级并激活滑动分区栏 (area_entrance_v3)
  */
 
 let body = $response.body;
@@ -10,42 +10,29 @@ if (body) {
         if (obj && obj.data && Array.isArray(obj.data.card_list)) {
             let list = obj.data.card_list;
 
-            // 1. 检查并注入 banner_v2（大焦点图与内嵌播放位）
-            let hasBanner = list.some(item => item.card_type === "banner_v2");
-            if (!hasBanner) {
-                let bannerCard = {
-                    "card_type": "banner_v2",
-                    "card_data": {
-                        "banner_v2": {
-                            "module_info": { "id": 1, "link": "", "pic": "", "title": "banner位", "type": 1, "sort": 0, "count": 0 },
-                            "list": [
-                                {
-                                    "id": 303160,
-                                    "index": 1,
-                                    "type": 2,
-                                    "static": {
-                                        "content": "",
-                                        "group_id": 0,
-                                        "is_ad": false,
-                                        "link": "https://game.bilibili.com/pd/incentive",
-                                        "pic": "https://i0.hdslb.com/bfs/live/e422423c988df9afe512b8664fd8cb9294a6d3d9.png",
-                                        "title": "《闪耀！优俊少女》2.5周年版本创作激励"
-                                    }
-                                }
-                            ]
-                        }
-                    }
-                };
-                list.unshift(bannerCard);
+            // 1. 彻底清除任何 banner 模块（不注入、不展示大横幅）
+            list = list.filter(item => item.card_type !== "banner_v2");
+
+            // 2. 移除国际版原先无法在首屏正常展示的旧版 area_entrance_v1
+            let oldIndex = list.findIndex(item => item.card_type === "area_entrance_v1");
+            if (oldIndex !== -1) {
+                list.splice(oldIndex, 1);
             }
 
-            // 2. 将旧版的 area_entrance_v1 替换升级为国内版的 area_entrance_v3
-            let entranceIndex = list.findIndex(item => item.card_type === "area_entrance_v1");
+            // 3. 构建可被客户端正确渲染的 area_entrance_v3 滑动标签组件
             let areaEntranceV3 = {
                 "card_type": "area_entrance_v3",
                 "card_data": {
                     "area_entrance_v3": {
-                        "module_info": { "id": 58, "link": "", "pic": "", "title": "分区入口（二合一）", "type": 15, "sort": 3, "count": 0 },
+                        "module_info": {
+                            "id": 58,
+                            "link": "",
+                            "pic": "",
+                            "title": "分区入口（二合一）",
+                            "type": 15,
+                            "sort": 3,
+                            "count": 0
+                        },
                         "extra_info": { "offline": [] },
                         "list": [
                             { "id": 14, "link": "https://live.bilibili.com/app/area?parent_area_id=14&parent_area_name=聊天室&area_id=0&area_name=&source_event=1", "pic": "", "title": "聊天室", "area_v2_id": 0, "area_v2_parent_id": 14, "tag_type": 1, "cover_source": 0 },
@@ -64,14 +51,15 @@ if (body) {
                 }
             };
 
-            if (entranceIndex !== -1) {
-                list[entranceIndex] = areaEntranceV3;
+            // 4. 将滑动标签栏精准插入在“我的关注”下方
+            let idolIdx = list.findIndex(item => item.card_type === "my_idol_v1");
+            if (idolIdx !== -1) {
+                list.splice(idolIdx + 1, 0, areaEntranceV3);
             } else {
-                // 如果原本没有，插入在关注栏 my_idol_v1 之后
-                let idolIdx = list.findIndex(item => item.card_type === "my_idol_v1");
-                list.splice(idolIdx !== -1 ? idolIdx + 1 : 1, 0, areaEntranceV3);
+                list.unshift(areaEntranceV3);
             }
 
+            obj.data.card_list = list;
             body = JSON.stringify(obj);
         }
     } catch (e) {
