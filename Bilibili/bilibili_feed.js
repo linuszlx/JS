@@ -1,19 +1,22 @@
 /*
- * Bilibili 国际版 Live Feed 增强脚本 (基于真实参数精准识别翻页)
+ * Bilibili 国际版 Live Feed 增强脚本 (修复首屏识别与翻页)
  */
 
 const url = $request.url;
 let body = $response.body;
 
-// 1. 精准判断是否为“首屏/下拉刷新”：
-// 翻页请求特征：含有 page=2/3/4... 且 is_refresh=0
-const isPaging = /page=[2-9]/.test(url) || url.includes("is_refresh=0");
+// 1. 精准提取 URL 中的 page 参数值
+let pageMatch = url.match(/[?&]page=(\d+)/);
+let pageNum = pageMatch ? parseInt(pageMatch[1], 10) : 1;
+
+// 只有第 2 页及以上的请求才判定为翻页加载更多
+const isPaging = pageNum > 1;
 
 if (!body || isPaging) {
-    // 命中翻页：直接原样放行，绝不在中间插入 Banner 或胶囊栏
+    // 翻页加载更多：原样放行，不在瀑布流中间插入任何栏位
     $done({ body });
 } else {
-    // 命中首屏（下拉刷新）：拉取 Banner 并排版顶部吸顶胶囊
+    // 首屏请求 (page=1 或无 page 参数)：执行 Banner 提取与顶部分区胶囊栏注入
     const bannerApi = "https://api.live.bilibili.com/xlive/web-interface/v1/index/getBanner?platform=web";
 
     $httpClient.get({ url: bannerApi, timeout: 2.0 }, function(error, response, data) {
@@ -22,7 +25,7 @@ if (!body || isPaging) {
             let list = obj?.data?.card_list;
 
             if (Array.isArray(list)) {
-                // 清理旧组件
+                // 移除旧的分区组件
                 let oldIdx = list.findIndex(i => i.card_type === "area_entrance_v1");
                 if (oldIdx !== -1) {
                     list.splice(oldIdx, 1);
@@ -85,10 +88,10 @@ if (!body || isPaging) {
                 let idolIdx = list.findIndex(i => i.card_type === "my_idol_v1");
                 let idolCard = idolIdx !== -1 ? list.splice(idolIdx, 1)[0] : null;
 
-                // 清除首屏可能存在的残留项
+                // 清理首屏多余残留项
                 list = list.filter(i => i.card_type !== "banner_v2" && i.card_type !== "area_entrance_v3");
 
-                // 按顺序依次推到最头部：Banner -> 关注 -> 分区胶囊
+                // 按顺序推入头部：Banner -> 关注 -> 分区胶囊
                 list.unshift(areaEntranceV3);
                 if (idolCard) list.unshift(idolCard);
                 if (bannerCard) list.unshift(bannerCard);
